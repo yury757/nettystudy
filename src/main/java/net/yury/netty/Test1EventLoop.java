@@ -14,7 +14,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * EventLoopGroup是一个事件循环组，可以包含多个事件循环器，每一个事件循环器实际上是一个单线程的执行器，因此也可以像线程池一样执行普通任务
  * 在事件循环器中，每个IO事件的处理都被当作一个IOTask来运行，因此才需要执行器
  */
-public class TestEventLoop {
+public class Test1EventLoop {
     public static void main(String[] args) throws ExecutionException, InterruptedException, IOException {
         // 1、初始化事件循环组
         // IO事件、普通任务、定时任务

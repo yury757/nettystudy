@@ -8,7 +8,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
-public class TestPromise {
+public class Test2Promise {
     public static void main(String[] args) {
         NioEventLoopGroup executors = new NioEventLoopGroup();
 
