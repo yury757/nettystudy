@@ -1,4 +1,4 @@
-package net.yury.netty.Test10Rpc;
+package net.yury.netty.Test10Rpc.client;
 
 import io.netty.channel.*;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
@@ -6,6 +6,8 @@ import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 import io.netty.util.concurrent.Promise;
 import lombok.extern.slf4j.Slf4j;
+import net.yury.netty.Test10Rpc.RpcCodec;
+import net.yury.netty.Test10Rpc.RpcResponseMessage;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

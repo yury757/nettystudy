@@ -1,8 +1,10 @@
-package net.yury.netty.Test10Rpc;
+package net.yury.netty.Test10Rpc.server;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import lombok.extern.slf4j.Slf4j;
+import net.yury.netty.Test10Rpc.RpcRequestMessage;
+import net.yury.netty.Test10Rpc.RpcResponseMessage;
 import net.yury.netty.Test10Rpc.service.RpcRegisterProcessor;
 
 import java.lang.reflect.Method;

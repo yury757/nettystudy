@@ -1,13 +1,9 @@
-package net.yury.netty.Test10Rpc;
+package net.yury.netty.Test10Rpc.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
-import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
-import io.netty.handler.logging.LogLevel;
-import io.netty.handler.logging.LoggingHandler;
 import lombok.extern.slf4j.Slf4j;
 import net.yury.netty.Test10Rpc.service.RpcRegisterProcessor;
 

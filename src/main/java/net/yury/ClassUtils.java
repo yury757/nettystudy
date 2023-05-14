@@ -10,12 +10,6 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
-/**
-  * 类相关的工具类
-  *
-  * @author <a href="mailto:ohergal@gmail.com">ohergal</a>
-  *
-  */
 public class ClassUtils {
 
     /**

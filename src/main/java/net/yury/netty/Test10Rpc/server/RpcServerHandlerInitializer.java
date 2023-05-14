@@ -1,10 +1,11 @@
-package net.yury.netty.Test10Rpc;
+package net.yury.netty.Test10Rpc.server;
 
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
+import net.yury.netty.Test10Rpc.RpcCodec;
 
 public class RpcServerHandlerInitializer extends ChannelInitializer<Channel> {
     @Override

@@ -1,4 +1,4 @@
-package net.yury.netty.Test10Rpc;
+package net.yury.netty.Test10Rpc.client;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -10,6 +10,8 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.util.concurrent.DefaultPromise;
 import io.netty.util.concurrent.Promise;
 import lombok.extern.slf4j.Slf4j;
+import net.yury.netty.Test10Rpc.ComplicateClass;
+import net.yury.netty.Test10Rpc.RpcRequestMessage;
 import net.yury.netty.Test10Rpc.service.HelloService;
 
 import java.lang.reflect.Proxy;
