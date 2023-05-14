@@ -21,7 +21,8 @@ public class RpcServerHandler extends SimpleChannelInboundHandler<RpcRequestMess
         try {
             Class<?> clazz = Class.forName(interfaceName);
             Method method = clazz.getMethod(msg.getMethodName(), msg.getParamsTypes());
-            result = method.invoke(RpcRegisterProcessor.RPC_SERVICE.get(clazz).get(1), msg.getParamsValues());
+            result = method.invoke(RpcRegisterProcessor.RPC_SERVICE.get(clazz).get(0), msg.getParamsValues());
+            resp.setSequenceID(msg.getSequenceID());
             resp.setReturnValue(result);
             resp.setCause(null);
         }catch (Throwable cause) {
@@ -30,8 +31,14 @@ public class RpcServerHandler extends SimpleChannelInboundHandler<RpcRequestMess
 //
 //            }
 //            while ()
-            cause.printStackTrace();
-            resp.setCause(cause);
+            Throwable realCause = cause.getCause();
+            realCause.printStackTrace();
+
+            // 返回一个新的exception，避免原始的exception太长导致网络IO异常
+            Exception exception = new Exception("rpc call error: " + realCause.getMessage());
+            // 只保留第一个trace
+            exception.setStackTrace(new StackTraceElement[] {realCause.getStackTrace()[0]});
+            resp.setCause(exception);
         }
         // 处理业务逻辑
         ctx.channel().writeAndFlush(resp);

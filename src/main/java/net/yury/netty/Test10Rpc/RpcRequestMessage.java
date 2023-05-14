@@ -8,14 +8,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class RpcRequestMessage implements Message {
+    private long sequenceID;
     private String interfaceName;
     private String methodName;
     private Class<?> returnType;
     private Class[] paramsTypes;
     private Object[] paramsValues;
-
-    @Override
-    public int getMessageType() {
-        return Message.RPC_MESSAGE_TYPE_REQUEST;
-    }
 }

@@ -8,11 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class RpcResponseMessage implements Message {
+    private long sequenceID;
     private Object returnValue;
     private Throwable cause;
-
-    @Override
-    public int getMessageType() {
-        return Message.RPC_MESSAGE_TYPE_RESPONSE;
-    }
 }
